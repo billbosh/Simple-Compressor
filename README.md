@@ -7,3 +7,5 @@ Download all files and build VST3 via included XCode project in "Builds/MacOSX".
 - [x] Log scales for attack and release parameters
 - [ ] Simple GUI
 - [ ] Create installer
+
+test
