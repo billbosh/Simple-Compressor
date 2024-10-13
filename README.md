@@ -1,7 +1,7 @@
 # Simple-Compressor
 
 A compressor plugin made with JUCE.\
-Download all files and build VST3 via included XCode project in "Builds/MacOSX".
+Download all files and open the .jucer with projucer, export to XCode and then build VST3.
 
 ### To do
 - [x] Log scales for attack and release parameters
