@@ -23,8 +23,8 @@ SimpleCompressorAudioProcessor::SimpleCompressorAudioProcessor()
     parameters(*this, nullptr, "simplecomp", {
         std::make_unique<AudioParameterFloat>(thresholdParamID, "Threshold", NormalisableRange<float> {-70.f, 6.f, 0.01f}, 0.f),
         std::make_unique<AudioParameterFloat>(ratioParamID, "Ratio", NormalisableRange<float> {1.f, 20.f, 0.01f}, 1.f),
-        std::make_unique<AudioParameterFloat>(attackParamID, "Attack", NormalisableRange<float> {0.01f, 1000.f, 0.01f}, 1.f),
-        std::make_unique<AudioParameterFloat>(releaseParamID, "Release", NormalisableRange<float> {1.f, 3000.f, 0.01f}, 30.f),
+        std::make_unique<AudioParameterFloat>(attackParamID, "Attack", NormalisableRange<float> {0.01f, 1000.f, 0.01f, 0.11925f}, 1.f),
+        std::make_unique<AudioParameterFloat>(releaseParamID, "Release", NormalisableRange<float> {1.f, 3000.f, 0.01f, 0.38649f}, 30.f),
         std::make_unique<AudioParameterFloat>(outputGainParamID, "Output Gain", NormalisableRange<float> {-36.f, 36.f, 0.01f}, 0.f)
     })
 #endif
