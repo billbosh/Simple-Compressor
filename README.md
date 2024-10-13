@@ -1,7 +1,7 @@
 # Simple-Compressor
 
 A compressor plugin made with JUCE.\
-Download all filtes and build VST3 via included XCode project in "Builds/MacOSX".
+Download all files and build VST3 via included XCode project in "Builds/MacOSX".
 
 ### To do
 - [ ] Simple GUI
