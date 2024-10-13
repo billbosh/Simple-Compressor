@@ -2,7 +2,7 @@
 
 ![Plugin screenshot](PluginScreenshot.png)
 
-A compressor plugin made with JUCE.\
+A compressor plugin made with JUCE, using JUCE DSP and with a custom LookAndFeel\
 Download all files and open the .jucer with projucer, export to XCode and then build VST3.
 
 ### To do
