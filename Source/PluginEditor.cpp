@@ -11,10 +11,46 @@
 
 //==============================================================================
 SimpleCompressorAudioProcessorEditor::SimpleCompressorAudioProcessorEditor (SimpleCompressorAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
+    : AudioProcessorEditor (&p), audioProcessor (p),
+    thresholdAttachment(p.getApvts(), p.thresholdParamID, thresholdSlider),
+    ratioAttachment(p.getApvts(), p.ratioParamID, ratioSlider),
+    attackAttachment(p.getApvts(), p.attackParamID, attackSlider),
+    releaseAttachment(p.getApvts(), p.releaseParamID, releaseSlider),
+    outputGainAttchment(p.getApvts(), p.outputGainParamID, outputGainSlider)
 {
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
+    setLookAndFeel(new CustomLookAndFeel);
+    
+    thresholdSlider.setTextValueSuffix("dB");
+    ratioSlider.setTextValueSuffix(":1");
+    attackSlider.setTextValueSuffix("ms");
+    releaseSlider.setTextValueSuffix("ms");
+    outputGainSlider.setTextValueSuffix("dB");
+
+    
+    addAndMakeVisible(thresholdSlider);
+    addAndMakeVisible(ratioSlider);
+    addAndMakeVisible(attackSlider);
+    addAndMakeVisible(releaseSlider);
+    addAndMakeVisible(outputGainSlider);
+    addAndMakeVisible(thresholdLabel);
+    addAndMakeVisible(ratioLabel);
+    addAndMakeVisible(attackLabel);
+    addAndMakeVisible(releaseLabel);
+    addAndMakeVisible(outputGainLabel);
+
+    thresholdLabel.setJustificationType(Justification::centred);
+    ratioLabel.setJustificationType(Justification::centred);
+    attackLabel.setJustificationType(Justification::centred);
+    releaseLabel.setJustificationType(Justification::centred);
+    outputGainLabel.setJustificationType(Justification::centred);
+
+    thresholdLabel.attachToComponent(&thresholdSlider, false);
+    ratioLabel.attachToComponent(&ratioSlider, false);
+    attackLabel.attachToComponent(&attackSlider, false);
+    releaseLabel.attachToComponent(&releaseSlider, false);
+    outputGainLabel.attachToComponent(&outputGainSlider, false);
+
+    
     setSize (400, 300);
 }
 
@@ -25,16 +61,17 @@ SimpleCompressorAudioProcessorEditor::~SimpleCompressorAudioProcessorEditor()
 //==============================================================================
 void SimpleCompressorAudioProcessorEditor::paint (juce::Graphics& g)
 {
-    // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (juce::Colours::white);
-    g.setFont (juce::FontOptions (15.0f));
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
 }
 
 void SimpleCompressorAudioProcessorEditor::resized()
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+    auto bounds = getBounds().reduced(30);
+    auto sliderWidth = bounds.getWidth() / 5;
+    
+    thresholdSlider.setBounds(bounds.removeFromLeft(sliderWidth));
+    ratioSlider.setBounds(bounds.removeFromLeft(sliderWidth));
+    attackSlider.setBounds(bounds.removeFromLeft(sliderWidth));
+    releaseSlider.setBounds(bounds.removeFromLeft(sliderWidth));
+    outputGainSlider.setBounds(bounds.removeFromLeft(sliderWidth));
 }

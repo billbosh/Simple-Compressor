@@ -57,14 +57,17 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
-private:
-    //==============================================================================
     const String thresholdParamID = "threshold";
     const String ratioParamID = "ratio";
     const String attackParamID = "attack";
     const String releaseParamID = "release";
     const String outputGainParamID = "outputGain";
     
+    AudioProcessorValueTreeState& getApvts();
+    
+private:
+    //==============================================================================
+
     void parameterChanged(const String &parameterID, float newValue) override;
     
     AudioProcessorValueTreeState parameters;

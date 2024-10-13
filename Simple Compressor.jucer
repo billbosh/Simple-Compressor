@@ -4,7 +4,15 @@
               useAppConfig="0" addUsingNamespaceToJuceHeader="1" jucerFormatVersion="1"
               companyName="billbosh">
   <MAINGROUP id="J3Diq8" name="Simple Compressor">
+    <GROUP id="{D705CEF8-154D-D4DD-A45F-C48C72B81BDA}" name="Fonts">
+      <FILE id="OxF36A" name="B612Mono-Bold.ttf" compile="0" resource="1"
+            file="../../Uni Files/Web Audio/web-audio-gui-ver2/fonts/B612Mono-Bold.ttf"/>
+    </GROUP>
     <GROUP id="{B159A6DC-117B-AAD3-CA5B-B1C1B6E1E629}" name="Source">
+      <FILE id="SGVamk" name="CustomLookAndFeel.cpp" compile="1" resource="0"
+            file="Source/CustomLookAndFeel.cpp"/>
+      <FILE id="BgdSem" name="CustomLookAndFeel.h" compile="0" resource="0"
+            file="Source/CustomLookAndFeel.h"/>
       <FILE id="hSXVOT" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="mTJGEX" name="PluginProcessor.h" compile="0" resource="0"

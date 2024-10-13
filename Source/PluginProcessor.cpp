@@ -172,7 +172,7 @@ void SimpleCompressorAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
 //==============================================================================
 bool SimpleCompressorAudioProcessor::hasEditor() const
 {
-    return false; // (change this to false if you choose to not supply an editor)
+    return true; // (change this to false if you choose to not supply an editor)
 }
 
 juce::AudioProcessorEditor* SimpleCompressorAudioProcessor::createEditor()
@@ -217,6 +217,12 @@ void SimpleCompressorAudioProcessor::parameterChanged(const String &parameterID,
         makeUpGainProcessor.setGainDecibels(newValue);
     }
 }
+
+AudioProcessorValueTreeState &SimpleCompressorAudioProcessor::getApvts() 
+{
+    return parameters;
+}
+
 
 //==============================================================================
 // This creates new instances of the plugin..
