@@ -7,5 +7,5 @@ Download all files and open the .jucer with projucer, export to XCode and then b
 
 ### To do
 - [x] Log scales for attack and release parameters
-- [ ] Simple GUI
+- [x] Simple GUI
 - [ ] Create installer
