@@ -12,7 +12,6 @@
 
 CustomLookAndFeel::CustomLookAndFeel()
 {
-    
     setColourScheme(getCustomColourScheme());
 };
 
