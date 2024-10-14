@@ -69,9 +69,9 @@ void SimpleCompressorAudioProcessorEditor::resized()
     auto bounds = getBounds().reduced(30);
     auto sliderWidth = bounds.getWidth() / 5;
     
-    thresholdSlider.setBounds(bounds.removeFromLeft(sliderWidth));
-    ratioSlider.setBounds(bounds.removeFromLeft(sliderWidth));
-    attackSlider.setBounds(bounds.removeFromLeft(sliderWidth));
-    releaseSlider.setBounds(bounds.removeFromLeft(sliderWidth));
-    outputGainSlider.setBounds(bounds.removeFromLeft(sliderWidth));
+    thresholdSlider.setBounds(bounds.removeFromLeft(sliderWidth).reduced(2));
+    ratioSlider.setBounds(bounds.removeFromLeft(sliderWidth).reduced(2));
+    attackSlider.setBounds(bounds.removeFromLeft(sliderWidth).reduced(2));
+    releaseSlider.setBounds(bounds.removeFromLeft(sliderWidth).reduced(2));
+    outputGainSlider.setBounds(bounds.removeFromLeft(sliderWidth).reduced(2));
 }
