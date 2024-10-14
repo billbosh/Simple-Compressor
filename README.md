@@ -8,4 +8,4 @@ Download .pkg via releases and install.
 ### To do
 - [x] Log scales for attack and release parameters
 - [x] Simple GUI
-- [ ] Create installer
+- [x] Create installer
